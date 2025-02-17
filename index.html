@@ -3,61 +3,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>موقع البوت الإسلامي</title>
+    <title>شبكة اجتماعية متكاملة</title>
     <style>
-        body { font-family: 'Arial', sans-serif; direction: rtl; text-align: right; background-color: #f4f4f4; color: #333; margin: 0; padding: 20px; }
-        h1 { color: #007bff; }
-        h2 { color: #007bff; border-bottom: 2px solid #007bff; padding-bottom: 5px; margin-top: 20px; }
-        ul { list-style: none; padding: 0; }
-        li { background: #e9f5ff; padding: 10px; margin: 5px 0; border-radius: 5px; display: flex; align-items: center; transition: 0.3s; }
-        li:hover { background: #cce5ff; transform: scale(1.03); }
-        .icon { width: 30px; height: 30px; margin-left: 10px; transition: 0.3s; }
-        .icon:hover { transform: rotate(10deg); }
-        .btn { display: block; text-align: center; background: #007bff; color: white; padding: 10px; margin-top: 20px; border-radius: 5px; text-decoration: none; font-size: 18px; transition: 0.3s; }
-        .btn:hover { background: #0056b3; }
-        .share-buttons { text-align: center; margin-top: 20px; }
-        .share-btn { display: inline-block; margin: 5px; padding: 10px 15px; background: #007bff; color: white; border-radius: 5px; text-decoration: none; font-size: 16px; transition: 0.3s; }
-        .share-btn:hover { background: #0056b3; }
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; text-align: center; }
+        .container { width: 50%; margin: auto; background: white; padding: 20px; border-radius: 10px; box-shadow: 0px 0px 10px gray; }
+        input, textarea { width: 90%; padding: 10px; margin: 10px; border-radius: 5px; border: 1px solid #ccc; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        #posts { margin-top: 20px; text-align: left; }
+        .post { background: #fff; padding: 10px; margin: 10px 0; border-radius: 5px; box-shadow: 0px 0px 5px gray; }
     </style>
 </head>
 <body>
+    <div class="container">
+        <h1>شبكة تواصل اجتماعي</h1>
+        
+        <!-- نموذج تسجيل الدخول -->
+        <div id="loginForm">
+            <input type="email" id="email" placeholder="البريد الإلكتروني" required>
+            <input type="password" id="password" placeholder="كلمة المرور" required>
+            <button onclick="login()">تسجيل الدخول</button>
+            <button onclick="loginWithPhone()">تسجيل الدخول برقم الهاتف</button>
+        </div>
 
-    <h1>✨ مميزات البوت الإسلامي ✨</h1>
-
-    <h2>📌 خدمات دينية يومية:</h2>
-    <ul>
-        <li><img src="https://cdn-icons-png.flaticon.com/512/846/846449.png" class="icon"> أوقات الصلاة بناءً على الموقع الجغرافي.</li>
-        <li><img src="https://cdn-icons-png.flaticon.com/512/1048/1048934.png" class="icon"> تذكير بأوقات الصلاة مع إمكانية تشغيل الأذان.</li>
-        <li><img src="https://cdn-icons-png.flaticon.com/512/3898/3898085.png" class="icon"> أذكار وأدعية يومية.</li>
-        <li><img src="https://cdn-icons-png.flaticon.com/512/2333/2333136.png" class="icon"> إرسال حديث نبوي يومي مع الشرح.</li>
-    </ul>
-
-    <h2>📌 محتوى تفاعلي وممتع:</h2>
-    <ul>
-        <li><img src="https://cdn-icons-png.flaticon.com/512/1086/1086491.png" class="icon"> مسابقة إسلامية يومية.</li>
-        <li><img src="https://cdn-icons-png.flaticon.com/512/3059/3059395.png" class="icon"> اقتباسات دينية ملهمة يوميًا.</li>
-        <li><img src="https://cdn-icons-png.flaticon.com/512/609/609093.png" class="icon"> حساب اتجاه القبلة.</li>
-    </ul>
-
-    <h2>📌 أدوات مساعدة للمسلم:</h2>
-    <ul>
-        <li><img src="https://cdn-icons-png.flaticon.com/512/1533/1533486.png" class="icon"> تنبيه بالمساجد القريبة.</li>
-        <li><img src="https://cdn-icons-png.flaticon.com/512/2040/2040967.png" class="icon"> أوقات السحور والإفطار في رمضان.</li>
-        <li><img src="https://cdn-icons-png.flaticon.com/512/3128/3128323.png" class="icon"> تفسير الأحلام الإسلامي.</li>
-    </ul>
-
-    <h2>📌 تكامل مع خدمات أخرى:</h2>
-    <ul>
-        <li><img src="https://cdn-icons-png.flaticon.com/512/535/535188.png" class="icon"> خدمات الخرائط لتحديد مواقع المساجد القريبة.</li>
-    </ul>
-
-    <a href="https://t.me/your_bot" class="btn">🔙 الرجوع إلى البوت</a>
-
-    <div class="share-buttons">
-        <a href="https://www.facebook.com/sharer/sharer.php?u=https://yourwebsite.com" target="_blank" class="share-btn">🔗 مشاركة على فيسبوك</a>
-        <a href="https://twitter.com/intent/tweet?url=https://yourwebsite.com&text=تعرف على مميزات البوت الإسلامي!" target="_blank" class="share-btn">🐦 مشاركة على تويتر</a>
-        <a href="https://api.whatsapp.com/send?text=تعرف على مميزات البوت الإسلامي! https://yourwebsite.com" target="_blank" class="share-btn">📲 مشاركة على واتساب</a>
+        <!-- المحتوى بعد تسجيل الدخول -->
+        <div id="content" style="display:none;">
+            <button onclick="logout()">تسجيل الخروج</button>
+            <h2>منشورات المستخدمين</h2>
+            <div id="posts"></div>
+            <textarea id="postContent" placeholder="اكتب منشورك..."></textarea>
+            <button onclick="addPost()">نشر</button>
+        </div>
     </div>
 
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-firestore.js"></script>
+
+    <script>
+        // إعداد Firebase
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+        const auth = firebase.auth();
+        const db = firebase.firestore();
+
+        // تسجيل الدخول بالبريد الإلكتروني
+        function login() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            auth.signInWithEmailAndPassword(email, password)
+                .then(() => {
+                    document.getElementById('loginForm').style.display = 'none';
+                    document.getElementById('content').style.display = 'block';
+                    loadPosts();
+                })
+                .catch(error => alert('خطأ: ' + error.message));
+        }
+
+        // تسجيل الخروج
+        function logout() {
+            auth.signOut().then(() => {
+                document.getElementById('loginForm').style.display = 'block';
+                document.getElementById('content').style.display = 'none';
+            });
+        }
+
+        // نشر منشور جديد
+        function addPost() {
+            const postContent = document.getElementById('postContent').value;
+            db.collection("posts").add({
+                content: postContent,
+                timestamp: new Date()
+            }).then(() => {
+                document.getElementById('postContent').value = "";
+                loadPosts();
+            });
+        }
+
+        // تحميل المنشورات
+        function loadPosts() {
+            db.collection("posts").orderBy("timestamp", "desc").onSnapshot(snapshot => {
+                const postsContainer = document.getElementById('posts');
+                postsContainer.innerHTML = "";
+                snapshot.forEach(doc => {
+                    const postData = doc.data();
+                    const postElement = document.createElement('div');
+                    postElement.classList.add('post');
+                    postElement.innerHTML = `<p>${postData.content}</p>`;
+                    postsContainer.appendChild(postElement);
+                });
+            });
+        }
+
+        // تسجيل الدخول عبر رقم الهاتف
+        function loginWithPhone() {
+            const phoneNumber = prompt("أدخل رقم هاتفك:");
+            const appVerifier = new firebase.auth.RecaptchaVerifier('loginForm', { size: 'invisible' });
+            auth.signInWithPhoneNumber(phoneNumber, appVerifier)
+                .then(confirmationResult => {
+                    const code = prompt("أدخل الكود:");
+                    return confirmationResult.confirm(code);
+                })
+                .then(() => alert("تم تسجيل الدخول"))
+                .catch(error => alert("خطأ: " + error.message));
+        }
+    </script>
 </body>
 </html>
