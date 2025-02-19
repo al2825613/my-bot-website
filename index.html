@@ -1,65 +1,0 @@
-<!DOCTYPE html>
-<html lang="ar">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الموقع الإسلامي المتكامل</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js" defer></script>
-</head>
-<body>
-
-    <header>
-        <h1>🌙 الموقع الإسلامي المتكامل</h1>
-        <p>ذكر الله يطمئن القلوب ❤️</p>
-    </header>
-
-    <section class="azkar">
-        <h2>📖 ذكر اليوم</h2>
-        <p id="zekr">جاري تحميل الذكر...</p>
-    </section>
-
-    <section class="prayer-times">
-        <h2>🕌 أوقات الصلاة</h2>
-        <p id="prayer-times">جاري تحميل أوقات الصلاة...</p>
-    </section>
-
-    <section class="qibla">
-        <h2>🧭 اتجاه القبلة</h2>
-        <p id="qibla-direction">اضغط للحصول على اتجاه القبلة</p>
-        <button onclick="getQiblaDirection()">📍 تحديد الاتجاه</button>
-    </section>
-
-    <section class="quran">
-        <h2>📖 المصحف الإلكتروني</h2>
-        <button onclick="openQuran()">📖 قراءة القرآن</button>
-    </section>
-
-    <section class="adhan">
-        <h2>🔊 أصوات الأذان</h2>
-        <select id="adhan-select">
-            <option value="makkah">🕋 أذان مكة</option>
-            <option value="madinah">🏛️ أذان المدينة</option>
-            <option value="al-aqsa">🕌 أذان الأقصى</option>
-        </select>
-        <button onclick="playAdhan()">▶️ تشغيل الأذان</button>
-    </section>
-
-    <section class="map">
-        <h2>📍 المساجد القريبة</h2>
-        <div id="map"></div>
-    </section>
-
-    <section class="countdown">
-        <h2>⏳ العد التنازلي لرمضان</h2>
-        <p id="ramadan-countdown">جارٍ الحساب...</p>
-    </section>
-
-    <footer>
-        <p>© 2025 جميع الحقوق محفوظة لـ <strong>Mohamed Hasan</strong></p>
-    </footer>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
-
-</body>
-      </html>
