@@ -1,0 +1,100 @@
+/* General Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #eaeaea;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    direction: rtl;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+section {
+    padding: 2em;
+    text-align: center;
+    background-color: #fff;
+    margin: 1em;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+blockquote {
+    font-style: italic;
+    border-left: 4px solid #4CAF50;
+    padding-left: 1em;
+    margin: 1em 0;
+}
+
+button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Dark Theme */
+body.dark {
+    background-color: #333;
+    color: #eaeaea;
+}
+
+body.dark section {
+    background-color: #444;
+    color: #eaeaea;
+}
+
+body.dark button {
+    background-color: #555;
+}
+
+body.dark button:hover {
+    background-color: #666;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+
+    section {
+        padding: 1em;
+    }
+  }
