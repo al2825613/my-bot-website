@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع إسلامي</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
+</head>
+<body onload="initMap()">
+    <!-- الشريط العلوي -->
+    <header>
+        <h1>مرحبًا بك في موقعنا الإسلامي</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">الرئيسية</a></li>
+                <li><a href="#quran-reader">المصحف الإلكتروني</a></li>
+                <li><a href="#prayer-times">أوقات الصلاة</a></li>
+                <li><a href="#hadiths">الأحاديث النبوية</a></li>
+                <li><a href="#zakat-calculator">حاسبة الزكاة</a></li>
+                <li><a href="#islamic-radio">راديو إسلامي</a></li>
+                <li><a href="#makkah-live">بث مباشر للحرم المكي</a></li>
+                <li><a href="#mosques-map">خريطة المساجد القريبة</a></li>
+                <li><a href="#daily-challenges">تحديات يومية</a></li>
+                <li><a href="#share-content">مشاركة المحتوى</a></li>
+                <li><a href="#settings">إعدادات</a></li>
+                <li><a href="#about">عن الموقع</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- الرئيسية -->
+    <section id="home">
+        <h2>آية اليوم</h2>
+        <blockquote id="ayah-of-day">
+            "وَلَقَدْ أَرْسَلْنَا رُسُلًا مِنْ قَبْلِكَ وَجَعَلْنَا لَهُمْ أَزْوَاجًا وَذُرِّيَّةً ۚ وَكَانَ حَقًّا عَلَيْنَا النَّصْرُ." [الرعد: 38]
+        </blockquote>
+        <button onclick="changeAyah()">تغيير الآية</button>
+    </section>
+
+    <!-- المصحف الإلكتروني -->
+    <section id="quran-reader">
+        <h2>المصحف الإلكتروني</h2>
+        <div class="quran-search">
+            <input type="text" id="quran-search" placeholder="ابحث عن آية أو سورة...">
+            <button onclick="searchQuran()">بحث</button>
+        </div>
+        <div class="quran-content">
+            <p id="quran-text">سورتي الفاتحة:</p>
+            <p id="quran-translation">الترجمة: Surah Al-Fatiha</p>
+            <p id="quran-tafsir">التفسير: فاتحة الكتاب، وهي السورة الأولى في القرآن الكريم.</p>
+        </div>
+        <button onclick="playQuran()">تشغيل التلاوة</button>
+        <audio id="quran-audio" src="quran.mp3"></audio>
+    </section>
+
+    <!-- أوقات الصلاة -->
+    <section id="prayer-times">
+        <h2>أوقات الصلاة</h2>
+        <table>
+            <tr>
+                <th>الفجر</th>
+                <td id="fajr-time">05:00 AM</td>
+            </tr>
+            <tr>
+                <th>الظهر</th>
+                <td id="dhuhr-time">12:00 PM</td>
+            </tr>
+            <tr>
+                <th>العصر</th>
+                <td id="asr-time">03:00 PM</td>
+            </tr>
+            <tr>
+                <th>المغرب</th>
+                <td id="maghrib-time">06:00 PM</td>
+            </tr>
+            <tr>
+                <th>العشاء</th>
+                <td id="isha-time">08:00 PM</td>
+            </tr>
+        </table>
+        <button onclick="fetchPrayerTimes()">تحديث الأوقات</button>
+    </section>
+
+    <!-- الأحاديث النبوية -->
+    <section id="hadiths">
+        <h2>الأحاديث النبوية</h2>
+        <input type="text" id="hadith-search" placeholder="ابحث عن حديث...">
+        <button onclick="searchHadith()">بحث</button>
+        <div id="hadith-result"></div>
+    </section>
+
+    <!-- حاسبة الزكاة -->
+    <section id="zakat-calculator">
+        <h2>حاسبة الزكاة</h2>
+        <div class="calculator">
+            <label for="zakat-amount">إجمالي المال أو الذهب:</label>
+            <input type="number" id="zakat-amount" placeholder="ادخل المبلغ..." min="0">
+            <button onclick="calculateZakat()">حساب الزكاة</button>
+            <p id="zakat-result"></p>
+        </div>
+    </section>
+
+    <!-- راديو إسلامي مباشر -->
+    <section id="islamic-radio">
+        <h2>راديو إسلامي مباشر</h2>
+        <div class="radio-player">
+            <audio controls>
+                <source src="https://live.mp3quran.net:8443/stream/2/" type="audio/mpeg">
+                جهازك لا يدعم تشغيل الصوتيات.
+            </audio>
+            <p>استمع إلى القرآن الكريم بصوت القارئ المفضل.</p>
+        </div>
+    </section>
+
+    <!-- بث مباشر للحرم المكي -->
+    <section id="makkah-live">
+        <h2>بث مباشر للحرم المكي</h2>
+        <iframe
+            width="100%"
+            height="400"
+            src="https://www.hajj.gov.sa/ar/hajjandumrah/clock/clock.html"
+            frameborder="0"
+            allowfullscreen
+        ></iframe>
+        <p>شاهد الحرم المكي مباشرة من خلال الكاميرات الحيّة.</p>
+    </section>
+
+    <!-- خريطة المساجد القريبة -->
+    <section id="mosques-map">
+        <h2>خريطة المساجد القريبة</h2>
+        <div id="map" style="width: 100%; height: 400px;"></div>
+        <button onclick="findNearbyMosques()">إظهار المساجد القريبة</button>
+    </section>
+
+    <!-- تحديات يومية -->
+    <section id="daily-challenges">
+        <h2>تحديات يومية</h2>
+        <p id="challenge-text">قرأ 10 آيات من القرآن الكريم اليوم.</p>
+        <button onclick="completeChallenge()">إتمام التحدي</button>
+    </section>
+
+    <!-- مشاركة المحتوى -->
+    <section id="share-content">
+        <h2>مشاركة المحتوى</h2>
+        <button onclick="shareContent('twitter')">شارك على تويتر</button>
+        <button onclick="shareContent('facebook')">شارك على فيسبوك</button>
+    </section>
+
+    <!-- إعدادات -->
+    <section id="settings">
+        <h2>إعدادات</h2>
+        <label for="theme">اختر موضوع الموقع:</label>
+        <select id="theme" onchange="changeTheme()">
+            <option value="light">فاتح</option>
+            <option value="dark">داكن</option>
+        </select>
+    </section>
+
+    <!-- عن الموقع -->
+    <section id="about">
+        <h2>عن الموقع</h2>
+        <p>مرحبًا بك في موقعنا الإسلامي، حيث نسعى لتوفير محتوى إسلامي متنوع ومفيد.</p>
+        <p>تم تصميم وتطوير هذا الموقع بواسطة <strong>Mohamed Hasan</strong>. جميع الحقوق محفوظة.</p>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <p>&copy; 2023 جميع الحقوق محفوظة لدى <strong>Mohamed Hasan</strong>.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+                      </html>
